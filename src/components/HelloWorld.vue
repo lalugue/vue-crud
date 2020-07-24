@@ -1,10 +1,18 @@
 <template>  
-  <ul v-if="todos && todos.length">
-    <li v-for="todo in todos" v-bind:key="todo._id">
-      <p><strong>{{todo.todo_description}}</strong></p>
-      <p>{{todo.todo_responsible}}</p>
-    </li>
-  </ul>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Todo</th>
+      <th scope="col">Owner</th>      
+    </tr>
+  </thead>
+  <tbody v-for="todo in todos" v-bind:key="todo._id">
+    <tr>
+      <td>{{todo.todo_description}}</td>
+      <td>{{todo.todo_responsible}}</td>
+    </tr>
+  </tbody> 
+  </table>
 </template>
 
 <script>
