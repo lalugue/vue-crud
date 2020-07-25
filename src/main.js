@@ -11,6 +11,30 @@ const API_GET = "http://localhost:4000/todos"
 const API_UPDATE = "http://localhost:4000/todos/update"
 const API_CREATE = "http://localhost:4000/todos/add"
 
+//routes
+import HelloWorld from './components/HelloWorld.vue'
+import EditForm from './components/EditForm.vue'
+import Router from 'vue-router'
+
+
+Vue.use(Router)
+
+const router = new Router({
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+     {
+      path: '/edit',
+      name: 'Edit',
+      component: EditForm
+    }
+  ]
+})
+
 new Vue({
   render: h => h(App),
-}).$mount('#app')
+router}).$mount('#app')
