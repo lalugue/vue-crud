@@ -3,12 +3,14 @@
 </template>
 
 <script>
-console.log("data: ")
-//console.log(entrydata)
-
 export default {
+  /*props: [
+    'todo'
+  ],*/
   mounted(){
     console.log("EditForm is mounted")
+    console.log(this.$route.params)
+    console.log(this)
   }
 }
 </script>

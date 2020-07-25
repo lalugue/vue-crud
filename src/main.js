@@ -30,7 +30,8 @@ const router = new Router({
      {
       path: '/edit',
       name: 'Edit',
-      component: EditForm
+      component: EditForm,
+      //props: true
     }
   ]
 })
