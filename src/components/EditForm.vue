@@ -5,6 +5,12 @@
 <script>
 console.log("data: ")
 //console.log(entrydata)
+
+export default {
+  mounted(){
+    console.log("EditForm is mounted")
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
