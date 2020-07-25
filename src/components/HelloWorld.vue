@@ -3,13 +3,20 @@
     <thead>
     <tr>
       <th scope="col">Todo</th>
-      <th scope="col">Owner</th>      
+      <th scope="col">Owner</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Completed</th>             
     </tr>
   </thead>
   <tbody v-for="todo in todos" v-bind:key="todo._id">
     <tr>
       <td>{{todo.todo_description}}</td>
       <td>{{todo.todo_responsible}}</td>
+      <td>{{todo.todo_priority}}</td>
+      <td>
+        {{todo.todo_completed}}
+       <span v-bind:class="todo.todo_completed ? 'oi oi-check text-success' : 'oi oi-x text-danger'"></span> 
+      </td>
     </tr>
   </tbody> 
   </table>
