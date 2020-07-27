@@ -9,10 +9,10 @@
     <input id="ownerInput" class="form-control" :placeholder="todo_responsible">
   </div>
   <div>
-  <b-dropdown id="dropdownPriority" :text="todo_priority" class="m-md-2 bg-success">
-    <b-dropdown-item class="btn btn-success">Low</b-dropdown-item>
-    <b-dropdown-item class="btn btn-warning">Medium</b-dropdown-item>
-    <b-dropdown-item class="btn btn-danger">High</b-dropdown-item>    
+  <b-dropdown id="dropdownPriority" text="Priority" class="m-md-2">
+    <b-dropdown-item variant="success">Low</b-dropdown-item>
+    <b-dropdown-item variant="warning">Medium</b-dropdown-item>
+    <b-dropdown-item variant="danger">High</b-dropdown-item>    
   </b-dropdown>
 </div>
   <br/>
