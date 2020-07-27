@@ -8,16 +8,14 @@
     <label for="exampleInputPassword1">Owner</label>
     <input id="ownerInput" class="form-control" :placeholder="todo_responsible">
   </div>
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    {{todo_priority}}
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Low</a>
-      <a class="dropdown-item" href="#">Medium</a>
-      <a class="dropdown-item" href="#">High</a>
-    </div>
-  </div>
+  <div>
+  <b-dropdown id="dropdownPriority" :text="todo_priority" class="m-md-2 bg-success">
+    <b-dropdown-item class="btn btn-success">Low</b-dropdown-item>
+    <b-dropdown-item class="btn btn-warning">Medium</b-dropdown-item>
+    <b-dropdown-item class="btn btn-danger">High</b-dropdown-item>    
+  </b-dropdown>
+</div>
+  <br/>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </template>

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 //import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 //import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -18,6 +19,7 @@ import Router from 'vue-router'
 
 
 Vue.use(Router)
+Vue.use(BootstrapVue)
 
 const router = new Router({
   mode: 'history',
