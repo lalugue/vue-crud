@@ -7,12 +7,12 @@
   <div class="form-group">
     <label for="exampleInputPassword1">Owner</label>
     <input id="ownerInput" class="form-control" :placeholder="todo_responsible">
-  </div>
+  </div>  
   <div>
-  <b-dropdown id="dropdownPriority" text="Priority" class="m-md-2">
-    <b-dropdown-item variant="success">Low</b-dropdown-item>
-    <b-dropdown-item variant="warning">Medium</b-dropdown-item>
-    <b-dropdown-item variant="danger">High</b-dropdown-item>    
+  <b-dropdown id="dropdownPriority" :text="priority_text" class="m-md-2" :variant="priority_color">
+    <b-dropdown-item variant="success" @click="setPriority('Low','success')" >Low</b-dropdown-item>
+    <b-dropdown-item variant="warning" @click="setPriority('Medium', 'warning')">Medium</b-dropdown-item>
+    <b-dropdown-item variant="danger"  @click="setPriority('High', 'danger')">High</b-dropdown-item>    
   </b-dropdown>
 </div>
   <br/>
@@ -22,12 +22,25 @@
 
 <script>
 export default {
+  methods: {
+    setPriority: function(value, color){
+      this.submit_data.todo_priority = value
+      this.priority_text = value
+      this.priority_color = color
+      
+    }
+  },
   data: function(){
     return{
       test: "hello",
       todo_description: this.$route.params.todo_description,
       todo_responsible: this.$route.params.todo_responsible,
-      todo_priority: this.$route.params.todo_priority
+      todo_priority: this.$route.params.todo_priority,
+      priority: [{ value: null, text: 'Priority', class: "text-primary" },"Low","Medium","High"],
+      priority_text: "Priority",
+      priority_color: "",
+      submit_data: []
+
     }
   },  
   mounted(){
