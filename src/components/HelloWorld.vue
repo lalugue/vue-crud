@@ -18,7 +18,7 @@
         {{todo.todo_completed}}
        <span v-bind:class="todo.todo_completed ? 'oi oi-check text-success' : 'oi oi-x text-danger'"></span> 
       </td>
-      <td><button class="btn btn-primary"><router-link :to="{name: 'Edit', params: todo}">Edit</router-link></button></td>
+      <td><router-link :to="{name: 'Edit', params: todo}"><button class="btn btn-primary">Edit</button></router-link></td>
     </tr>
   </tbody> 
   </table>
