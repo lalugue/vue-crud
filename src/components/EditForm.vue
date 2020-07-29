@@ -6,10 +6,10 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Owner</label>
-    <input id="ownerInput" class="form-control" :placeholder="new_todo_responsible">
+    <input id="ownerInput" class="form-control" :placeholder="new_todo_responsible" v-model="new_todo_responsible">
   </div>  
   <div>
-  <b-dropdown id="dropdownPriority" :text="priority_text" class="m-md-2" :variant="priority_color">
+  <b-dropdown id="dropdownPriority" :text="priority_text" class="m-md-2" :variant="priority_color" v-model="new_todo_priority">
     <b-dropdown-item variant="success" @click="setPriority('Low','success')" >Low</b-dropdown-item>
     <b-dropdown-item variant="warning" @click="setPriority('Medium', 'warning')">Medium</b-dropdown-item>
     <b-dropdown-item variant="danger"  @click="setPriority('High', 'danger')">High</b-dropdown-item>    
@@ -26,7 +26,8 @@ export default {
     setPriority: function(value, color){
       this.submit_data.todo_priority = value
       this.priority_text = value
-      this.priority_color = color      
+      this.priority_color = color 
+      this.new_todo_responsible = value     
     },
     updateTodo: function(){
       alert(this.new_todo_description)
@@ -35,14 +36,15 @@ export default {
   data: function(){
     return{
       test: "hello",
+      id: this.$route.params.id,
       todo_description: this.$route.params.todo_description,
       todo_responsible: this.$route.params.todo_responsible,
       todo_priority: this.$route.params.todo_priority,
+      todo_completed: this.$route.params.todo_completed,
       priority: [{ value: null, text: 'Priority', class: "text-primary" },"Low","Medium","High"],
       priority_text: "Priority",
       priority_color: "",
-      submit_data: [],
-      new_todo_description: ""
+      submit_data: [],     
 
     }
   },  
