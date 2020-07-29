@@ -9,7 +9,7 @@
     <input id="ownerInput" class="form-control" :placeholder="new_todo_responsible" v-model="new_todo_responsible">
   </div>  
   <div>
-  <b-dropdown id="dropdownPriority" :text="priority_text" class="m-md-2" :variant="priority_color" v-model="new_todo_priority">
+  <b-dropdown id="dropdownPriority" :text="priority_text" class="m-md-2" :variant="priority_color">
     <b-dropdown-item variant="success" @click="setPriority('Low','success')" >Low</b-dropdown-item>
     <b-dropdown-item variant="warning" @click="setPriority('Medium', 'warning')">Medium</b-dropdown-item>
     <b-dropdown-item variant="danger"  @click="setPriority('High', 'danger')">High</b-dropdown-item>    
@@ -21,22 +21,33 @@
 </template>
 
 <script>
+import axios from 'axios';
+const API_UPDATE = "http://localhost:4000/todos/update/"
+
 export default {
   methods: {
     setPriority: function(value, color){
       this.submit_data.todo_priority = value
       this.priority_text = value
       this.priority_color = color 
-      this.new_todo_responsible = value     
+      this.new_todo_priority = value     
     },
     updateTodo: function(){
-      alert(this.new_todo_description)
+      const newTodo = {
+            todo_description : this.new_todo_description,
+            todo_responsible : this.new_todo_responsible,
+            todo_priority : this.new_todo_priority,
+            todo_completed : this.new_todo_completed
+        }
+
+      axios.post(API_UPDATE + this.id, newTodo)
+             .then(res => console.log(res.data))
     }
   },
   data: function(){
     return{
       test: "hello",
-      id: this.$route.params.id,
+      id: this.$route.params._id,
       todo_description: this.$route.params.todo_description,
       todo_responsible: this.$route.params.todo_responsible,
       todo_priority: this.$route.params.todo_priority,
@@ -44,7 +55,11 @@ export default {
       priority: [{ value: null, text: 'Priority', class: "text-primary" },"Low","Medium","High"],
       priority_text: "Priority",
       priority_color: "",
-      submit_data: [],     
+      submit_data: [],  
+      new_todo_responsible : "",
+      new_todo_description : "",
+      new_todo_priority : "",
+      new_todo_completed : this.$route.params.todo_completed   
 
     }
   },  
