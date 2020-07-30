@@ -16,7 +16,9 @@
   </b-dropdown>
 </div>
   <br/>
-  <button class="btn btn-primary" @click="updateTodo()">Submit</button>
+  
+  <button class="btn btn-primary" @click="updateTodo()">Submit</button>&emsp;
+  <router-link :to="{name: 'HelloWorld'}"><button class="btn btn-danger">Cancel</button></router-link>
 </form>
 </template>
 
@@ -75,6 +77,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+form {
+  margin: 20px;
+}
+
 h3 {
   margin: 40px 0 0;
 }
