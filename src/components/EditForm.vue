@@ -5,7 +5,7 @@
     <input id="todoInput" class="form-control" v-bind:placeholder="todo_description" v-model="new_todo_description">   
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Owner</label>
+    <label>Owner</label>
     <input id="ownerInput" class="form-control" :placeholder="new_todo_responsible" v-model="new_todo_responsible">
   </div>  
   <div>
@@ -14,7 +14,11 @@
     <b-dropdown-item variant="warning" @click="setPriority('Medium', 'warning')">Medium</b-dropdown-item>
     <b-dropdown-item variant="danger"  @click="setPriority('High', 'danger')">High</b-dropdown-item>    
   </b-dropdown>
-</div>
+  </div>
+  <div>
+    <label for="completed">Completed:</label>    
+    <input id="completed" name="completed" type="checkbox" class="form-check-input" :value="todo_completed" v-model="new_todo_completed">   
+  </div>
   <br/>
   
   <button class="btn btn-primary" @click="updateTodo()">Submit</button>&emsp;
