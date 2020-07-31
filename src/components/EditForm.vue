@@ -21,7 +21,7 @@
   </div>
   <br/>
   
-  <button class="btn btn-primary" @click="updateTodo()">Submit</button>&emsp;
+<router-link :to="{name: 'HelloWorld'}"><button type="submit" class="btn btn-primary" @click="updateTodo()">Submit</button></router-link>&emsp;
   <router-link :to="{name: 'HelloWorld'}"><button class="btn btn-danger">Cancel</button></router-link>
 </form>
 </template>
@@ -29,6 +29,7 @@
 <script>
 import axios from 'axios';
 const API_UPDATE = "http://localhost:4000/todos/update/"
+
 
 export default {
   methods: {
@@ -46,13 +47,21 @@ export default {
             todo_completed : this.new_todo_completed
         }
 
+      let self = this
       axios.post(API_UPDATE + this.id, newTodo)
-             .then(res => console.log(res.data))
+             .then(res =>{
+               
+               console.log("post request sent")
+               console.log(res.data)})
+      
+      
+      this.$router.push('/')
+      this.$router.go(0)
+      
     }
   },
   data: function(){
-    return{
-      test: "hello",
+    return{      
       id: this.$route.params._id,
       todo_description: this.$route.params.todo_description,
       todo_responsible: this.$route.params.todo_responsible,
@@ -62,9 +71,9 @@ export default {
       priority_text: "Priority",
       priority_color: "",
       submit_data: [],  
-      new_todo_responsible : "",
-      new_todo_description : "",
-      new_todo_priority : "",
+      new_todo_responsible : this.$route.params.todo_responsible,
+      new_todo_description : this.$route.params.todo_description,
+      new_todo_priority : this.$route.params.todo_priority,
       new_todo_completed : this.$route.params.todo_completed   
 
     }
