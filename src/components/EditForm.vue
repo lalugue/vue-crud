@@ -15,9 +15,9 @@
     <b-dropdown-item variant="danger"  @click="setPriority('High', 'danger')">High</b-dropdown-item>    
   </b-dropdown>
   </div>
-  <div>
-    <label for="completed">Completed:</label>    
-    <input id="completed" name="completed" type="checkbox" class="form-check-input" :value="todo_completed" v-model="new_todo_completed">   
+  <div class="form-group">        
+    <input id="completed" name="completed" type="checkbox"  :value="todo_completed" v-model="new_todo_completed">   
+    <label for="completed">&nbsp;&nbsp;&nbsp;&nbsp;Completed</label>
   </div>
   <br/>
   
