@@ -9,7 +9,8 @@
       <th scope="col">Owner</th>
       <th scope="col">Priority</th>
       <th scope="col">Completed</th>
-      <th scope="col">Edit</th>             
+      <th scope="col">Actions</th>
+                   
     </tr>
   </thead>
   <tbody v-for="todo in todos" v-bind:key="todo._id">
@@ -21,22 +22,38 @@
         {{todo.todo_completed}}
        <span v-bind:class="todo.todo_completed ? 'oi oi-check text-success' : 'oi oi-x text-danger'"></span> 
       </td>
-      <td><router-link :to="{name: 'Edit', params: todo}"><button class="btn btn-primary">Edit</button></router-link></td>
+      <td><router-link :to="{name: 'Edit', params: todo}"><button class="btn btn-primary">Edit</button></router-link>
+      <button @click="showPopup()" class="btn btn-danger">Delete</button></td>
     </tr>
   </tbody> 
   </table>
+  <DeleteModal></DeleteModal>
 </div>
 </template>
 
 <script>
 import axios from 'axios';
+import DeleteModal from './DeleteModal.vue'
+
 const API_GET = "http://localhost:4000/todos"
+
+
 
 export default {
   data() {
     return {
       todos: [],
-      errors: []
+      errors: [],
+      //DeleteModal: 'DeleteModal'
+    }
+  },
+  components: {
+    DeleteModal
+  },
+  methods: {
+    showPopup: function(data){
+        console.log("emitting showPopup")
+        this.$emit('showPopup')
     }
   },
 
