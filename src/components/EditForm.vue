@@ -2,14 +2,14 @@
   <form>
   <div class="form-group">    
     <label>Todo Description</label>
-    <input id="todoInput" class="form-control" v-bind:placeholder="todo_description" v-model="new_todo_description">   
+    <input id="todoInput" class="form-control" :placeholder="todo_description" v-model="new_todo_description">   
   </div>
   <div class="form-group">
     <label>Owner</label>
-    <input id="ownerInput" class="form-control" :placeholder="new_todo_responsible" v-model="new_todo_responsible">
+    <input id="ownerInput" class="form-control" :placeholder="todo_responsible" v-model="new_todo_responsible">
   </div>  
   <div>
-  <b-dropdown id="dropdownPriority" :text="priority_text" class="m-md-2" :variant="priority_color">
+  <b-dropdown id="dropdownPriority" :text="new_todo_priority" class="m-md-2" :variant="priority_color">
     <b-dropdown-item variant="success" @click="setPriority('Low','success')" >Low</b-dropdown-item>
     <b-dropdown-item variant="warning" @click="setPriority('Medium', 'warning')">Medium</b-dropdown-item>
     <b-dropdown-item variant="danger"  @click="setPriority('High', 'danger')">High</b-dropdown-item>    
@@ -17,7 +17,7 @@
   </div>
   <div class="form-group">        
     <input id="completed" name="completed" type="checkbox"  :value="todo_completed" v-model="new_todo_completed">   
-    <label for="completed">&nbsp;&nbsp;&nbsp;&nbsp;Completed</label>
+    <label for="completed">Completed</label>
   </div>
   <br/>
   
@@ -83,6 +83,10 @@ export default {
 <style scoped>
 form {
   margin: 20px;
+}
+
+label {
+  margin-left: 10px;
 }
 
 h3 {
