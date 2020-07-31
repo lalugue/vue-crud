@@ -1,4 +1,7 @@
-<template>  
+<template> 
+<div>
+  <h1> Todo List </h1>
+  <button id="addButton" class="btn btn-primary">Add Task</button>
   <table class="table">
     <thead>
     <tr>
@@ -22,6 +25,7 @@
     </tr>
   </tbody> 
   </table>
+</div>
 </template>
 
 <script>
@@ -53,6 +57,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+#addButton{
+  float: right;
+  margin: 10px;
+}
+
+h1{
+  text-align: center;
+}
 h3 {
   margin: 40px 0 0;
 }
