@@ -1,7 +1,7 @@
 <template> 
 <div>
   <h1> Todo List </h1>
-  <button id="addButton" class="btn btn-primary">Add Task</button>
+  <router-link :to="{name: 'Add', params: todo}"><button id="addButton" class="btn btn-primary">Add Task</button></router-link>
   <table class="table">
     <thead>
     <tr>

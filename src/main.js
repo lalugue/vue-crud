@@ -15,6 +15,7 @@ const API_CREATE = "http://localhost:4000/todos/add"
 //routes
 import HelloWorld from './components/HelloWorld.vue'
 import EditForm from './components/EditForm.vue'
+import AddForm from './components/AddForm.vue'
 import Router from 'vue-router'
 
 
@@ -34,6 +35,12 @@ const router = new Router({
       name: 'Edit',
       component: EditForm,
       //props: true
+    },
+    {
+      path: '/add',
+      name: 'Add',
+      component: AddForm,
+      
     }
   ]
 })
