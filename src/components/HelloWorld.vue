@@ -23,7 +23,7 @@
        <span v-bind:class="todo.todo_completed ? 'oi oi-check text-success' : 'oi oi-x text-danger'"></span> 
       </td>
       <td><router-link :to="{name: 'Edit', params: todo}"><button class="btn btn-primary">Edit</button></router-link>
-      <button @click="setDeleteData(todo.todo_description)" class="btn btn-danger" v-b-modal="'my-modal'">Delete</button></td>
+      <button @click="setDeleteData({todo_description: todo.todo_description, id: todo.__id})" class="btn btn-danger" v-b-modal="'my-modal'">Delete</button></td>
     </tr>
   </tbody> 
   </table>
@@ -44,7 +44,7 @@ export default {
     return {
       todos: [],
       errors: [],
-      deleteData: ""      
+      deleteData: {}      
     }
   },
   components: {
