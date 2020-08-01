@@ -1,6 +1,5 @@
-<template>
-   
-    <div @showPopup="showPopupHandler()">
+<template>   
+    <div>
     <b-modal id="my-modal" ref="my-modal" hide-footer title="Delete Confirmation">
       <div class="d-block text-center">
         <h3>Are you sure?</h3>        

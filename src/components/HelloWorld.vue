@@ -1,6 +1,5 @@
 <template> 
-<div>
-  
+<div>  
   <h1> Todo List </h1>
   <router-link :to="{name: 'Add'}"><button id="addButton" class="btn btn-primary">Add Task</button></router-link>
   <table class="table">
@@ -45,18 +44,13 @@ export default {
     return {
       todos: [],
       errors: [],
-      deleteData: ""
-      //DeleteModal: 'DeleteModal'
+      deleteData: ""      
     }
   },
   components: {
     DeleteModal
   },
-  methods: {
-    showPopup: function(data){
-        console.log("emitting showPopup")
-        this.$emit('showPopup')
-    },
+  methods: {  
 
     setDeleteData: function(data){
       this.deleteData = data
