@@ -1,5 +1,6 @@
 <template> 
 <div>
+  
   <h1> Todo List </h1>
   <router-link :to="{name: 'Add'}"><button id="addButton" class="btn btn-primary">Add Task</button></router-link>
   <table class="table">
@@ -23,11 +24,11 @@
        <span v-bind:class="todo.todo_completed ? 'oi oi-check text-success' : 'oi oi-x text-danger'"></span> 
       </td>
       <td><router-link :to="{name: 'Edit', params: todo}"><button class="btn btn-primary">Edit</button></router-link>
-      <button @click="showPopup()" class="btn btn-danger">Delete</button></td>
+      <button @click="showPopup()" class="btn btn-danger" v-b-modal="'my-modal'">Delete</button></td>
     </tr>
   </tbody> 
   </table>
-  <DeleteModal></DeleteModal>
+ <DeleteModal></DeleteModal> 
 </div>
 </template>
 

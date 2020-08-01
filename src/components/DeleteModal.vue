@@ -1,12 +1,12 @@
 <template>
    
-    <div @showPopup="showPopup">
-    <b-modal ref="my-modal" hide-footer title="Using Component Methods">
+    <div @showPopup="showPopupHandler()">
+    <b-modal id="my-modal" ref="my-modal" hide-footer title="Delete Confirmation">
       <div class="d-block text-center">
-        <h3>Hello From My Modal!</h3>
+        <h3>Are you sure?</h3>
       </div>
-      <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-button>
-      <b-button class="mt-2" variant="outline-warning" block @click="toggleModal">Toggle Me</b-button>
+      <b-button class="mt-3" variant="outline-danger" block @click="hideModal">No</b-button>
+      <b-button class="mt-2" variant="outline-warning" block @click="toggleModal">Yes</b-button>
     </b-modal>
     </div>
   
@@ -26,15 +26,17 @@
         // when the modal has hidden
         this.$refs['my-modal'].toggle('#toggle-btn')
       },
-      showPopup(){
-          console.log("showing modal")
+      showPopupHandler(e){
+          console.log("received emit, showing modal")
           this.showModal()
       }
     },
     created(){
-         this.$on('showPopup', () => {
+      this.$on('showPopup', () => {
             console.log("hello Popup")
-    })
+      })
+
+      this.showModal()
     }
   }
 </script>
