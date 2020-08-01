@@ -3,7 +3,8 @@
     <div @showPopup="showPopupHandler()">
     <b-modal id="my-modal" ref="my-modal" hide-footer title="Delete Confirmation">
       <div class="d-block text-center">
-        <h3>Are you sure?</h3>
+        <h3>Are you sure?</h3>        
+        <h4><i>{{deleteData}}</i></h4>
       </div>
       <b-button class="mt-3" variant="outline-danger" block @click="hideModal">No</b-button>
       <b-button class="mt-2" variant="outline-warning" block @click="toggleModal">Yes</b-button>
@@ -14,6 +15,7 @@
 
 <script>
   export default {
+    
     methods: {
       showModal() {
         this.$refs['my-modal'].show()
@@ -25,18 +27,12 @@
         // We pass the ID of the button that we want to return focus to
         // when the modal has hidden
         this.$refs['my-modal'].toggle('#toggle-btn')
-      },
-      showPopupHandler(e){
-          console.log("received emit, showing modal")
-          this.showModal()
       }
     },
     created(){
-      this.$on('showPopup', () => {
-            console.log("hello Popup")
-      })
-
-      this.showModal()
-    }
+      console.log("in modal created event handler")
+      console.log(this)
+    },
+    props: ['delete-data'] //kebab-case for camelCase
   }
 </script>

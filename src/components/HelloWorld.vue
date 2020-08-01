@@ -24,11 +24,11 @@
        <span v-bind:class="todo.todo_completed ? 'oi oi-check text-success' : 'oi oi-x text-danger'"></span> 
       </td>
       <td><router-link :to="{name: 'Edit', params: todo}"><button class="btn btn-primary">Edit</button></router-link>
-      <button @click="showPopup()" class="btn btn-danger" v-b-modal="'my-modal'">Delete</button></td>
+      <button @click="setDeleteData(todo.todo_description)" class="btn btn-danger" v-b-modal="'my-modal'">Delete</button></td>
     </tr>
   </tbody> 
   </table>
- <DeleteModal></DeleteModal> 
+ <DeleteModal :deleteData="deleteData"></DeleteModal> 
 </div>
 </template>
 
@@ -45,6 +45,7 @@ export default {
     return {
       todos: [],
       errors: [],
+      deleteData: ""
       //DeleteModal: 'DeleteModal'
     }
   },
@@ -55,6 +56,10 @@ export default {
     showPopup: function(data){
         console.log("emitting showPopup")
         this.$emit('showPopup')
+    },
+
+    setDeleteData: function(data){
+      this.deleteData = data
     }
   },
 
