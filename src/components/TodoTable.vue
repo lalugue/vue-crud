@@ -37,8 +37,6 @@ import DeleteModal from './DeleteModal.vue'
 
 const API_GET = "http://localhost:4000/todos"
 
-
-
 export default {
   data() {
     return {
