@@ -13,6 +13,9 @@
 </template>
 
 <script>
+import axios from "axios"
+const API_DELETE = "http://localhost:4000/todos/delete/"
+
   export default {
     
     methods: {
@@ -28,7 +31,21 @@
         this.$refs['my-modal'].toggle('#toggle-btn')
       },
       deleteDataFunc() {
-        this.hideModal()
+
+        console.log("deleting: ")
+        console.log(this.deleteData)
+
+        axios.post(API_DELETE + this.deleteData.id)
+             .then(res =>{                
+                console.log("post request sent")
+                console.log(res.data)
+                this.$router.push('/')
+                this.$router.go(0)
+
+                this.hideModal()
+              })        
+      
+        
       }
     },    
     props: ['delete-data'] //kebab-case for camelCase    
