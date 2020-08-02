@@ -75,6 +75,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+td button{
+  margin-right: 5px;
+}
+
 #addButton{
   float: right;
   margin: 10px;
