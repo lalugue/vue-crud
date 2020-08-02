@@ -1,5 +1,6 @@
-<template>  
+<template>      
   <form>
+  <h1>Add Todo</h1>
   <div class="form-group">    
     <label>Todo Description</label>
     <input id="todoInput" class="form-control" v-model="todo_description">   
@@ -39,7 +40,7 @@ export default {
       this.todo_priority = value     
     },
     addTodo: function(){
-      const newTodo = {
+      let newTodo = {
             todo_description : this.todo_description,
             todo_responsible : this.todo_responsible,
             todo_priority : this.todo_priority,
@@ -47,11 +48,6 @@ export default {
         }
 
       axios.post(API_ADD, newTodo)
-             .then(res =>{
-               
-               console.log("post request sent")
-               console.log(res.data)})
-      
       
       this.$router.push('/')
       this.$router.go(0)
@@ -66,20 +62,10 @@ export default {
       todo_completed: false,
       priority: [{ value: null, text: 'Priority', class: "text-primary" },"Low","Medium","High"],
       priority_text: "Priority",
-      priority_color: "",
-      submit_data: [], 
-       
-
+      priority_color: "" 
     }
-  },  
-  mounted(){
-    console.log("AddForm is mounted")
-    console.log(this.$route.params)
-    console.log(this)
   }
 }
-
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
