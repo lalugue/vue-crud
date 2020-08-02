@@ -30,15 +30,11 @@ const API_DELETE = "http://localhost:4000/todos/delete/"
         // when the modal has hidden
         this.$refs['my-modal'].toggle('#toggle-btn')
       },
-      deleteDataFunc() {
-
-        console.log("deleting: ")
-        console.log(this.deleteData)
+      deleteDataFunc() {      
 
         axios.post(API_DELETE + this.deleteData.id)
-             .then(res =>{                
-                console.log("post request sent")
-                console.log(res.data)
+             .then(res =>{
+               
                 this.$router.push('/')
                 this.$router.go(0)
 
