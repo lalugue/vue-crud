@@ -46,8 +46,7 @@ export default {
             todo_priority : this.new_todo_priority,
             todo_completed : this.new_todo_completed
         }
-
-      let self = this
+      
       axios.post(API_UPDATE + this.id, newTodo)
              .then(res =>{
                
