@@ -21,8 +21,8 @@
   </div>
   <br/>
   
-<router-link :to="{name: 'HelloWorld'}"><button type="submit" class="btn btn-primary" @click="addTodo()">Submit</button></router-link>&emsp;
-  <router-link :to="{name: 'HelloWorld'}"><button class="btn btn-danger">Cancel</button></router-link>
+  <router-link :to="{name: 'HelloWorld'}"><button type="submit" class="btn btn-primary mr-1" @click="addTodo()">Submit</button></router-link>  
+  <router-link :to="{name: 'HelloWorld'}"><button class="btn btn-danger mr-1">Cancel</button></router-link>
 </form>
 </template>
 
@@ -46,7 +46,6 @@ export default {
             todo_completed : this.todo_completed
         }
 
-      let self = this
       axios.post(API_ADD, newTodo)
              .then(res =>{
                
