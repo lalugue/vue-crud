@@ -30,6 +30,11 @@ npm run serve
 
 ## Additional notes
 
+### Todo (pun not intended)
+
+- Add "client-side" form validation
+- Add pretty design stuff
+
 ### Compiles and minifies for production
 ```
 npm run build
