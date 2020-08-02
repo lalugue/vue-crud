@@ -13,7 +13,7 @@ const API_UPDATE = "http://localhost:4000/todos/update"
 const API_CREATE = "http://localhost:4000/todos/add"
 
 //routes
-import HelloWorld from './components/HelloWorld.vue'
+import TodoTable from './components/TodoTable.vue'
 import EditForm from './components/EditForm.vue'
 import AddForm from './components/AddForm.vue'
 import Router from 'vue-router'
@@ -27,8 +27,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'TodoTable',
+      component: TodoTable
     },
      {
       path: '/edit',

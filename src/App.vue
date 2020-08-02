@@ -2,20 +2,20 @@
   <router-view>
     <div id="app">
       <img alt="Vue logo" src="./assets/logo.png">
-      <HelloWorld msg="test"/>
+      <TodoTable msg="test"/>
     </div>
   </router-view>
 </template>
 
 <script>
 //add first component
-import HelloWorld from './components/HelloWorld.vue'
+import TodoTable from './components/TodoTable.vue'
 
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TodoTable
   },
 
 

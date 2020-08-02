@@ -21,8 +21,8 @@
   </div>
   <br/>
   
-  <router-link :to="{name: 'HelloWorld'}"><button type="submit" class="btn btn-primary mr-1" @click="addTodo()">Submit</button></router-link>  
-  <router-link :to="{name: 'HelloWorld'}"><button class="btn btn-danger mr-1">Cancel</button></router-link>
+  <router-link :to="{name: 'TodoTable'}"><button type="submit" class="btn btn-primary mr-1" @click="addTodo()">Submit</button></router-link>  
+  <router-link :to="{name: 'TodoTable'}"><button class="btn btn-danger mr-1">Cancel</button></router-link>
 </form>
 </template>
 
