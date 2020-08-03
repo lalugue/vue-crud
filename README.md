@@ -9,7 +9,7 @@ Once downloaded, run the following command:
 npm install
 ```
 
-Pairs with a previously created backend for a MERN stack, grab it here:
+Pairs with a previously created MERN backend! Grab it here:
 [mern-crud-backend](https://github.com/lalugue/mern-crud-backend)
 
 
