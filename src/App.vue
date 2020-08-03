@@ -1,8 +1,7 @@
 <template>
   <router-view>
-    <div id="app">
-      <img alt="Vue logo" src="./assets/logo.png">
-      <TodoTable msg="test"/>
+    <div id="app">      
+      <TodoTable/>
     </div>
   </router-view>
 </template>
