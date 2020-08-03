@@ -1,6 +1,6 @@
 # vue-crud
 
-A prototype CRUD interface in Vue
+A prototype CRUD interface now in Vue and Bootstrap!
 
 ## How to install
 
@@ -9,7 +9,7 @@ Once downloaded, run the following command:
 npm install
 ```
 
-Grab and deploy the backend here:
+Pairs with a previously created backend for a MERN stack, grab it here:
 [mern-crud-backend](https://github.com/lalugue/mern-crud-backend)
 
 
