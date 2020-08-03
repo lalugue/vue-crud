@@ -61,9 +61,11 @@ export default {
       todo_responsible: this.$route.params.todo_responsible,
       todo_priority: this.$route.params.todo_priority,
       todo_completed: this.$route.params.todo_completed,
+      //for setting the Priority dropdown
       priority: [{ value: null, text: 'Priority', class: "text-primary" },"Low","Medium","High"],
       priority_text: "Priority",
-      priority_color: "",       
+      priority_color: "",
+      //a copy of the data for updating       
       new_todo_responsible : this.$route.params.todo_responsible,
       new_todo_description : this.$route.params.todo_description,
       new_todo_priority : this.$route.params.todo_priority,
