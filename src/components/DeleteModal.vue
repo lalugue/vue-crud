@@ -35,6 +35,7 @@ const API_DELETE = "http://localhost:4000/todos/delete/"
         axios.post(API_DELETE + this.deleteData.id)
              .then(res =>{
                
+                //redirect to 'homepage'
                 this.$router.push('/')
                 this.$router.go(0)
 

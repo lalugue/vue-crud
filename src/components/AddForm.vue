@@ -49,6 +49,7 @@ export default {
 
       axios.post(API_ADD, newTodo)
       
+      //redirect to 'homepage'
       this.$router.push('/')
       this.$router.go(0)
       
